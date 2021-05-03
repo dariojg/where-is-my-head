@@ -4,6 +4,8 @@ onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
 
+var damage = 50
+
 func _ready():
 	animationTree.active = true
 
@@ -21,3 +23,6 @@ func attack():
 	
 func attack_animation_finished():
 	state = MOVE
+
+func _on_Area2D_body_entered(body):
+	body.get_hurted(damage)

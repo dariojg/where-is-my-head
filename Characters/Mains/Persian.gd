@@ -21,12 +21,10 @@ func set_animation_state():
 		
 func attack():
 	animationState.travel("Attack")
-	print("attack method!")
 	
 func attack_animation_finished():
 	shoot_arrow() #actually shoot arrow on animation finish
 	state = MOVE
-	print("animf")
 
 func shoot_arrow():
 	var arrow = ArrowScene.instance()

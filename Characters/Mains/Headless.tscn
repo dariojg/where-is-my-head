@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://Characters/Mains/Headless.gd" type="Script" id=2]
 [ext_resource path="res://Characters/8DirAnimationPlayer.tscn" type="PackedScene" id=3]
@@ -10,7 +10,6 @@ extents = Vector2( 17.5, 30.2474 )
 [sub_resource type="Animation" id=2]
 resource_name = "attack-down"
 length = 0.4
-loop = true
 step = 0.08
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:region_rect")
@@ -50,11 +49,34 @@ tracks/2/keys = {
 "method": "attack_animation_finished"
 } ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("../Position2D:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 90.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../Position2D/Area2D/AttackCollision:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.24, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "attack-down-left"
 length = 0.4
-loop = true
 step = 0.08
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:region_rect")
@@ -142,7 +164,6 @@ tracks/2/keys = {
 [sub_resource type="Animation" id=5]
 resource_name = "attack-left"
 length = 0.4
-loop = true
 step = 0.08
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:region_rect")
@@ -182,11 +203,34 @@ tracks/2/keys = {
 "method": "attack_animation_finished"
 } ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("../Position2D:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 180.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../Position2D/Area2D/AttackCollision:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.24, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
 
 [sub_resource type="Animation" id=6]
 resource_name = "attack-right"
 length = 0.4
-loop = true
 step = 0.08
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:region_rect")
@@ -226,11 +270,34 @@ tracks/2/keys = {
 "method": "attack_animation_finished"
 } ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("../Position2D:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../Position2D/Area2D/AttackCollision:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.24, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
 
 [sub_resource type="Animation" id=7]
 resource_name = "attack-up"
 length = 0.4
-loop = true
 step = 0.08
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:region_rect")
@@ -270,11 +337,34 @@ tracks/2/keys = {
 "method": "attack_animation_finished"
 } ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("../Position2D:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -90.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../Position2D/Area2D/AttackCollision:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.24, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
 
 [sub_resource type="Animation" id=8]
 resource_name = "attack-up-left"
 length = 0.4
-loop = true
 step = 0.08
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:region_rect")
@@ -318,7 +408,6 @@ tracks/2/keys = {
 [sub_resource type="Animation" id=9]
 resource_name = "attack-up-right"
 length = 0.4
-loop = true
 step = 0.08
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:region_rect")
@@ -718,7 +807,12 @@ graph_offset = Vector2( -267.245, 49.2409 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=46]
 
+[sub_resource type="CapsuleShape2D" id=47]
+radius = 11.2618
+height = 18.8988
+
 [node name="Headless" type="KinematicBody2D"]
+collision_mask = 2
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -727,9 +821,8 @@ shape = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, 1 )
 texture = ExtResource( 4 )
-flip_h = true
 region_enabled = true
-region_rect = Rect2( 4182, 10, 75, 70 )
+region_rect = Rect2( 4277, 10, 46, 63 )
 
 [node name="AnimationPlayer" parent="." instance=ExtResource( 3 )]
 anims/attack-down = SubResource( 2 )
@@ -756,3 +849,17 @@ parameters/playback = SubResource( 46 )
 parameters/Attack/blend_position = Vector2( 0, 0 )
 parameters/Idle/blend_position = Vector2( -0.0026316, 0 )
 parameters/Move/blend_position = Vector2( 0.773684, 0.75 )
+
+[node name="Position2D" type="Position2D" parent="."]
+rotation = -1.5708
+
+[node name="Area2D" type="Area2D" parent="Position2D"]
+position = Vector2( 33.7029, 0.629963 )
+rotation = 1.5708
+collision_mask = 6
+
+[node name="AttackCollision" type="CollisionShape2D" parent="Position2D/Area2D"]
+position = Vector2( -3.46478, 3.77976 )
+shape = SubResource( 47 )
+disabled = true
+[connection signal="body_entered" from="Position2D/Area2D" to="." method="_on_Area2D_body_entered"]

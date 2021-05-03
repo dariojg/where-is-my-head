@@ -1,12 +1,15 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Characters/Mains/Headless.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Characters/Mains/Persian.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Characters/Enemies/Chinese.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Characters/Mains/Persian.tscn" type="PackedScene" id=3]
 
 [node name="Main" type="Node2D"]
 
-[node name="Persian" parent="." instance=ExtResource( 2 )]
-position = Vector2( 105.511, 121.226 )
+[node name="Chinese" parent="." instance=ExtResource( 2 )]
+position = Vector2( 295.207, 264.901 )
 
-[node name="Headless" parent="." instance=ExtResource( 1 )]
-position = Vector2( 97, 234 )
+[node name="Chinese3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 287.35, 105.511 )
+
+[node name="Persian" parent="." instance=ExtResource( 3 )]
+position = Vector2( 99.8991, 113.369 )

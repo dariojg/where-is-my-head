@@ -3,7 +3,7 @@ extends KinematicBody2D
 #Deberiamos implementar aceleración?
 var speed = 300
 var movement_vector = Vector2.ZERO
-var direction_vector = Vector2.ZERO
+var direction_vector = Vector2(1,0)
 
 enum {
 	MOVE,
