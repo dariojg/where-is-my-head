@@ -16,6 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Where-is-my-head"
+run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
 [input]
