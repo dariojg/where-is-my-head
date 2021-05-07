@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 #Deberiamos implementar aceleración?
-var speed = 300
+var speed = 400
 var movement_vector = Vector2.ZERO
 var direction_vector = Vector2(1,0)
 
@@ -11,7 +11,7 @@ enum {
 }
 
 var state = MOVE
-
+var life = 100
 
 func _physics_process(delta):
 	match state:
@@ -41,3 +41,8 @@ func attack():
 	
 func set_animation_state():
 	pass
+	
+func get_hurted(damage_received):
+	life -= damage_received
+	if life <= 0:
+		queue_free()

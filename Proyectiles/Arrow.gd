@@ -8,7 +8,7 @@ var time_to_live = 10 #10 segs
 var damage = 20
 
 
-func _process(delta):	
+func _physics_process(delta):
 	if launched:
 		position += velocity*delta
 		time_to_live -= delta
