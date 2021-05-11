@@ -1,10 +1,11 @@
-[gd_scene load_steps=55 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://Characters/Enemies/ChineseCR.gd" type="Script" id=1]
 [ext_resource path="res://assets/enemies/chinese_spritesheet.png" type="Texture" id=2]
 [ext_resource path="res://Characters/8DirAnimationPlayer.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Characters/Enemies/PlayerDetectionZone.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Characters/AttackArea.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Characters/Enemies/WanderController.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "attack-down"
@@ -982,6 +983,9 @@ shape = SubResource( 49 )
 [node name="AttackRange" type="RayCast2D" parent="."]
 enabled = true
 cast_to = Vector2( 43, 0 )
+
+[node name="WanderController" parent="." instance=ExtResource( 6 )]
+wander_range = 50
 
 [editable path="PlayerDetectionZone"]
 
