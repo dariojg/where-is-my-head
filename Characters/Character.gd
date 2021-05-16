@@ -5,6 +5,9 @@ var speed = 400
 var movement_vector = Vector2.ZERO
 var direction_vector = Vector2(1,0)
 
+var knockback = Vector2.ZERO
+var knockback_vector = Vector2.ZERO
+
 enum {
 	MOVE,
 	ATTACK,

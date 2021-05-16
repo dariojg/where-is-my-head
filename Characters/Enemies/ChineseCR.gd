@@ -24,7 +24,7 @@ var speed = 100
 var velocity = Vector2.ZERO
 
 var knockback = Vector2.ZERO
-var knockback_vector = Vector2.ZERO
+#var knockback_vector = Vector2.ZERO
 var friction = 200
 
 func _ready():

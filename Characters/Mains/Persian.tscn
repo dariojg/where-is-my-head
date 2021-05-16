@@ -724,7 +724,9 @@ graph_offset = Vector2( -267.245, 49.2409 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=47]
 
-[node name="Persian" type="KinematicBody2D"]
+[node name="Persian" type="KinematicBody2D" groups=[
+"hurtable",
+]]
 collision_mask = 6
 script = ExtResource( 4 )
 

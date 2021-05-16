@@ -925,7 +925,9 @@ radius = 149.696
 
 [sub_resource type="CapsuleShape2D" id=49]
 
-[node name="ChineseCR" type="KinematicBody2D"]
+[node name="ChineseCR" type="KinematicBody2D" groups=[
+"hurtable",
+]]
 collision_layer = 4
 collision_mask = 3
 script = ExtResource( 1 )

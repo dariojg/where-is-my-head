@@ -3,12 +3,13 @@ extends "res://Characters/Character.gd"
 onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
+onready var attackArea = $AttackArea
 
 export var damage = 50
 
 func _ready():
 	animationTree.active = true
-	$AttackArea.damage = self.damage
+	attackArea.damage = self.damage
 
 func _physics_process(delta):
 	if movement_vector != Vector2.ZERO:
@@ -16,6 +17,7 @@ func _physics_process(delta):
 		animationTree.set("parameters/Move/blend_position", movement_vector)
 		animationTree.set("parameters/Attack/blend_position", movement_vector)
 		animationState.travel("Move")
+		attackArea.knockback_vector = direction_vector
 	else:
 		animationState.travel("Idle")
 

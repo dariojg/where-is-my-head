@@ -5,12 +5,13 @@ var velocity = Vector2(0, 0)
 var speed = 500
 var time_to_live = 10 #10 segs
 
-var damage = 20
+var knockback = Vector2.ZERO
 
+var damage = 20
 
 func _physics_process(delta):
 	if launched:
-		position += velocity*delta
+		position += velocity * delta
 		time_to_live -= delta
 	
 	if time_to_live <= 0:
@@ -18,8 +19,11 @@ func _physics_process(delta):
 
 func launch(initial_velocity : Vector2):
 	launched = true
+	knockback = initial_velocity
 	velocity = initial_velocity * speed
 
 func _on_Arrow_body_entered(body):
-	body.get_hurted(damage)
+	if body.is_in_group("hurtable"):
+		body.get_hurted(damage)
+		body.knockback = knockback * 80
 	queue_free()
