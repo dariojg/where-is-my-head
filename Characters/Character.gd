@@ -40,4 +40,4 @@ func set_animation_state(state):
 func get_hurted(damage_received):
 	life -= damage_received
 	if life <= 0:
-		queue_free()
+		state = Global.States.DEAD
