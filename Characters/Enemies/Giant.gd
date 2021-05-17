@@ -36,7 +36,7 @@ func _physics_process(delta):
 
 		Global.States.WANDER:
 			seek_and_wander()
-			velocity = global_position.direction_to(wanderController.target_position)
+			velocity = global_position.direction_to(wanderController.target_position)			
 
 			if global_position.distance_to(wanderController.target_position) <= 5:
 				pick_random_state_and_reset_wander()

@@ -8,9 +8,14 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node",
+"class": "AnimationTreeSwitcher",
+"language": "GDScript",
+"path": "res://Characters/AnimationTreeSwitcher.gd"
+} ]
 _global_script_class_icons={
-
+"AnimationTreeSwitcher": ""
 }
 
 [application]
@@ -36,3 +41,7 @@ ui_attack={
 2d_physics/layer_1="Player"
 2d_physics/layer_2="World"
 2d_physics/layer_3="Enemy"
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"

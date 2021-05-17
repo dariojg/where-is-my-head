@@ -1,30 +1,22 @@
 extends "res://Characters/Character.gd"
 
-onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
 onready var arrowSpawn = $ArrowSpawn
+
+onready var animationTreeSwitcher = AnimationTreeSwitcher.new(animationTree)
 
 var ArrowScene = preload("res://Proyectiles/Arrow.tscn")
 
 func _ready():
 	animationTree.active = true
 
-func set_animation_state():
-	if movement_vector != Vector2.ZERO:
-		animationTree.set("parameters/Idle/blend_position", movement_vector)
-		animationTree.set("parameters/Move/blend_position", movement_vector)
-		animationTree.set("parameters/Attack/blend_position", movement_vector)
-		animationState.travel("Move")
-	else:
-		animationState.travel("Idle")
-		
-func attack():
-	animationState.travel("Attack")
-	
+func set_animation_state(state):
+	animationTreeSwitcher.switch_animation(state, movement_vector)
+
 func attack_animation_finished():
 	shoot_arrow() #actually shoot arrow on animation finish
-	state = MOVE
+	state = Global.States.MOVE
 
 func shoot_arrow():
 	var arrow = ArrowScene.instance()

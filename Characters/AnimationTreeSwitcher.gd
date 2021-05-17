@@ -20,3 +20,5 @@ func switch_animation(state, vector):
 			animationState.travel("Idle")
 		Global.States.ATTACK:
 			animationState.travel("Attack")
+		Global.States.DEAD:
+			animationState.travel("Dead")			
