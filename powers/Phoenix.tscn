@@ -1,0 +1,139 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/characters/phoenix/phoenix_spritesheet.png" type="Texture" id=1]
+[ext_resource path="res://powers/Phoenix.gd" type="Script" id=2]
+[ext_resource path="res://powers/Fireball.tscn" type="PackedScene" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "down-left"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 756, 10, 100, 88 ), Rect2( 876, 10, 100, 87 ), Rect2( 996, 10, 101, 92 ), Rect2( 1117, 10, 96, 97 ), Rect2( 1233, 10, 101, 92 ), Rect2( 1354, 10, 102, 95 ), Rect2( 1476, 10, 96, 87 ), Rect2( 1592, 10, 99, 88 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "down-right"
+loop = true
+step = 0.125
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 756, 10, 100, 88 ), Rect2( 876, 10, 100, 87 ), Rect2( 996, 10, 101, 92 ), Rect2( 1117, 10, 96, 97 ), Rect2( 1233, 10, 101, 92 ), Rect2( 1354, 10, 102, 95 ), Rect2( 1476, 10, 96, 87 ), Rect2( 1592, 10, 99, 88 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "up-left"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 2881, 10, 105, 93 ), Rect2( 3006, 10, 105, 95 ), Rect2( 3131, 10, 111, 99 ), Rect2( 3262, 10, 101, 95 ), Rect2( 3383, 10, 106, 98 ), Rect2( 3509, 10, 108, 95 ), Rect2( 3637, 10, 105, 95 ), Rect2( 3762, 10, 106, 95 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "up-right"
+loop = true
+step = 0.125
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 2881, 10, 105, 93 ), Rect2( 3006, 10, 105, 95 ), Rect2( 3131, 10, 111, 99 ), Rect2( 3262, 10, 101, 95 ), Rect2( 3383, 10, 106, 98 ), Rect2( 3509, 10, 108, 95 ), Rect2( 3637, 10, 105, 95 ), Rect2( 3762, 10, 106, 95 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[node name="Phoenix" type="Node2D"]
+script = ExtResource( 2 )
+fireballScene = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+flip_h = true
+region_enabled = true
+region_rect = Rect2( 756, 10, 100, 88 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite")
+playback_process_mode = 0
+anims/down-left = SubResource( 1 )
+anims/down-right = SubResource( 2 )
+anims/up-left = SubResource( 3 )
+anims/up-right = SubResource( 4 )
+
+[node name="FireballSpawnTimer" type="Timer" parent="."]
+wait_time = 0.5
+[connection signal="timeout" from="FireballSpawnTimer" to="." method="_on_FireballSpawnTimer_timeout"]
