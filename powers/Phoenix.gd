@@ -26,7 +26,7 @@ func _physics_process(delta):
 func summon_fireball():
 	var fireball = fireballScene.instance()
 	fireball.position = position
-	fireball.rotation = direction_vector.angle() - PI/4
+	fireball.rotation = direction_vector.angle() + rand_range(-PI/4,PI/4)
 	get_parent().add_child(fireball)
 	fireball.launch()
 

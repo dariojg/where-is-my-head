@@ -8,5 +8,5 @@ script = ExtResource( 1 )
 phoenixScene = ExtResource( 3 )
 
 [node name="PhoenixSpawnTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.35
 [connection signal="timeout" from="PhoenixSpawnTimer" to="." method="_on_PhoenixSpawnTimer_timeout"]

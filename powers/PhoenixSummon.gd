@@ -18,6 +18,9 @@ func activate():
 		cooldown = cooldown_total
 
 func _physics_process(delta):
+	if Input.is_action_just_pressed("phoenix_summon"):
+		activate()
+	
 	if cooldown > 0:
 		cooldown -= delta
 	if time_left > 0:
