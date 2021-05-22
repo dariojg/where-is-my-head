@@ -12,11 +12,11 @@ var state = Global.States.MOVE
 var life = 100
 
 func _physics_process(delta):
+	set_animation_state(state)
 	match state:
 		Global.States.MOVE, Global.States.IDLE:
 			get_input()
 			move_and_slide(movement_vector * speed)
-	set_animation_state(state)
 
 func get_input():
 	#allows joystick input
@@ -31,7 +31,7 @@ func get_input():
 	else:
 		state = Global.States.IDLE
 	
-	if Input.is_action_just_pressed("ui_attack"):
+	if Input.is_action_just_pressed("ui_attack") && state != Global.States.ATTACK:
 		state = Global.States.ATTACK
 
 func set_animation_state(state):

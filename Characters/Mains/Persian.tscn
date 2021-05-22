@@ -670,66 +670,64 @@ blend_point_7/node = SubResource( 27 )
 blend_point_7/pos = Vector2( -1, -1 )
 blend_mode = 1
 
-[sub_resource type="AnimationNodeAnimation" id=49]
+[sub_resource type="AnimationNodeAnimation" id=29]
 animation = "dead"
 
-[sub_resource type="AnimationNodeAnimation" id=29]
+[sub_resource type="AnimationNodeAnimation" id=30]
 animation = "idle"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=30]
-blend_point_0/node = SubResource( 29 )
+[sub_resource type="AnimationNodeBlendSpace2D" id=31]
+blend_point_0/node = SubResource( 30 )
 blend_point_0/pos = Vector2( 0, 0 )
 blend_mode = 1
 
-[sub_resource type="AnimationNodeAnimation" id=31]
+[sub_resource type="AnimationNodeAnimation" id=32]
 animation = "left"
 
-[sub_resource type="AnimationNodeAnimation" id=32]
+[sub_resource type="AnimationNodeAnimation" id=33]
 animation = "right"
 
-[sub_resource type="AnimationNodeAnimation" id=33]
-animation = "down"
-
 [sub_resource type="AnimationNodeAnimation" id=34]
-animation = "up"
+animation = "down"
 
 [sub_resource type="AnimationNodeAnimation" id=35]
-animation = "down"
+animation = "up"
 
 [sub_resource type="AnimationNodeAnimation" id=36]
-animation = "down-right"
+animation = "down"
 
 [sub_resource type="AnimationNodeAnimation" id=37]
-animation = "down-left"
+animation = "down-right"
 
 [sub_resource type="AnimationNodeAnimation" id=38]
-animation = "up-left"
+animation = "down-left"
 
 [sub_resource type="AnimationNodeAnimation" id=39]
+animation = "up-left"
+
+[sub_resource type="AnimationNodeAnimation" id=40]
 animation = "up-right"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=40]
-blend_point_0/node = SubResource( 31 )
+[sub_resource type="AnimationNodeBlendSpace2D" id=41]
+blend_point_0/node = SubResource( 32 )
 blend_point_0/pos = Vector2( -1, 0 )
-blend_point_1/node = SubResource( 32 )
+blend_point_1/node = SubResource( 33 )
 blend_point_1/pos = Vector2( 1, 0 )
-blend_point_2/node = SubResource( 33 )
+blend_point_2/node = SubResource( 34 )
 blend_point_2/pos = Vector2( 0, 1 )
-blend_point_3/node = SubResource( 34 )
+blend_point_3/node = SubResource( 35 )
 blend_point_3/pos = Vector2( 0, -1 )
-blend_point_4/node = SubResource( 35 )
+blend_point_4/node = SubResource( 36 )
 blend_point_4/pos = Vector2( 0, 1 )
-blend_point_5/node = SubResource( 36 )
+blend_point_5/node = SubResource( 37 )
 blend_point_5/pos = Vector2( 1, 1 )
-blend_point_6/node = SubResource( 37 )
+blend_point_6/node = SubResource( 38 )
 blend_point_6/pos = Vector2( -1, 1 )
-blend_point_7/node = SubResource( 38 )
+blend_point_7/node = SubResource( 39 )
 blend_point_7/pos = Vector2( -1, -1 )
-blend_point_8/node = SubResource( 39 )
+blend_point_8/node = SubResource( 40 )
 blend_point_8/pos = Vector2( 1, -1 )
 blend_mode = 1
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=41]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=42]
 
@@ -741,6 +739,12 @@ blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=46]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=47]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=48]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=49]
+
 [sub_resource type="AnimationNodeStateMachineTransition" id=50]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=51]
@@ -749,24 +753,20 @@ blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=53]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=54]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=55]
-
-[sub_resource type="AnimationNodeStateMachine" id=47]
+[sub_resource type="AnimationNodeStateMachine" id=54]
 states/Attack/node = SubResource( 28 )
 states/Attack/position = Vector2( 146, 205 )
-states/Dead/node = SubResource( 49 )
+states/Dead/node = SubResource( 29 )
 states/Dead/position = Vector2( 330, 205 )
-states/Idle/node = SubResource( 30 )
+states/Idle/node = SubResource( 31 )
 states/Idle/position = Vector2( 146, 115 )
-states/Move/node = SubResource( 40 )
+states/Move/node = SubResource( 41 )
 states/Move/position = Vector2( 330, 115 )
-transitions = [ "Idle", "Move", SubResource( 41 ), "Move", "Idle", SubResource( 42 ), "Idle", "Attack", SubResource( 43 ), "Attack", "Idle", SubResource( 44 ), "Move", "Attack", SubResource( 45 ), "Attack", "Move", SubResource( 46 ), "Idle", "Dead", SubResource( 50 ), "Dead", "Idle", SubResource( 51 ), "Move", "Dead", SubResource( 52 ), "Dead", "Move", SubResource( 53 ), "Dead", "Attack", SubResource( 54 ), "Attack", "Dead", SubResource( 55 ) ]
+transitions = [ "Idle", "Move", SubResource( 42 ), "Move", "Idle", SubResource( 43 ), "Idle", "Attack", SubResource( 44 ), "Attack", "Idle", SubResource( 45 ), "Move", "Attack", SubResource( 46 ), "Attack", "Move", SubResource( 47 ), "Idle", "Dead", SubResource( 48 ), "Dead", "Idle", SubResource( 49 ), "Move", "Dead", SubResource( 50 ), "Dead", "Move", SubResource( 51 ), "Dead", "Attack", SubResource( 52 ), "Attack", "Dead", SubResource( 53 ) ]
 start_node = "Idle"
 graph_offset = Vector2( -45.206, 49.2409 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=48]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=55]
 
 [node name="Persian" type="KinematicBody2D" groups=[
 "hurtable",
@@ -780,7 +780,7 @@ shape = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 3 )
 region_enabled = true
-region_rect = Rect2( 4559, 5, 41, 29 )
+region_rect = Rect2( 3771, 5, 68, 67 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sprite")
@@ -804,9 +804,9 @@ anims/up-left = SubResource( 18 )
 anims/up-right = SubResource( 19 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 47 )
+tree_root = SubResource( 54 )
 anim_player = NodePath("../AnimationPlayer")
-parameters/playback = SubResource( 48 )
+parameters/playback = SubResource( 55 )
 parameters/Attack/blend_position = Vector2( 0.7, 0.689655 )
 parameters/Idle/blend_position = Vector2( -0.588811, 0.278351 )
 parameters/Move/blend_position = Vector2( 0.773684, 0.75 )

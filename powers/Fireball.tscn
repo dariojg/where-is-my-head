@@ -135,7 +135,7 @@ rotation = -1.5708
 z_index = -1
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 72, 4, 48, 40 )
+region_rect = Rect2( 448, 8, 132, 92 )
 script = ExtResource( 6 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -149,10 +149,12 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ImpactArea"]
 position = Vector2( 11.9055, 10.9154 )
 shape = SubResource( 3 )
+disabled = true
 
 [node name="Particles2D" type="Particles2D" parent="."]
-position = Vector2( 10, 5 )
+position = Vector2( 40, 30 )
 rotation = -2.35619
+emitting = false
 amount = 10
 lifetime = 3.0
 local_coords = false

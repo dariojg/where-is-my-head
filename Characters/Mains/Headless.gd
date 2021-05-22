@@ -17,4 +17,4 @@ func set_animation_state(state):
 	animationTreeSwitcher.switch_animation(state, movement_vector)
 
 func attack_animation_finished():
-	state = Global.States.MOVE
+	state = Global.States.IDLE

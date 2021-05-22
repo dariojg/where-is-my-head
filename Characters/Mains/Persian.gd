@@ -16,7 +16,7 @@ func set_animation_state(state):
 
 func attack_animation_finished():
 	shoot_arrow() #actually shoot arrow on animation finish
-	state = Global.States.MOVE
+	state = Global.States.IDLE
 
 func shoot_arrow():
 	var arrow = ArrowScene.instance()
