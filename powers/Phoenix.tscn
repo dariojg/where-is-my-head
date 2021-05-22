@@ -119,7 +119,6 @@ tracks/1/keys = {
 }
 
 [node name="Phoenix" type="Node2D"]
-modulate = Color( 1, 1, 1, 0.392157 )
 z_index = 1
 script = ExtResource( 2 )
 fireballScene = ExtResource( 3 )
