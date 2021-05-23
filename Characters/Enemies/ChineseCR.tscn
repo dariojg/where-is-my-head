@@ -565,6 +565,18 @@ tracks/1/keys = {
 "method": "queue_free"
 } ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("../CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=11]
 length = 0.4
@@ -974,7 +986,7 @@ shape = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 region_enabled = true
-region_rect = Rect2( 1408, 10, 28, 65 )
+region_rect = Rect2( 5133, 10, 56, 47 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sprite")
@@ -1008,7 +1020,7 @@ parameters/Move/blend_position = Vector2( 0.609262, 0.491329 )
 [node name="AttackArea" parent="." instance=ExtResource( 5 )]
 rotation = 1.5708
 
-[node name="Area2D" parent="AttackArea" index="0"]
+[node name="Area2D" parent="AttackArea" index="1"]
 collision_layer = 0
 collision_mask = 3
 

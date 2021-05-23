@@ -573,6 +573,18 @@ tracks/1/keys = {
 "method": "queue_free"
 } ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("../CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=11]
 length = 0.6
@@ -972,12 +984,13 @@ script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
+disabled = true
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, 1 )
 texture = ExtResource( 4 )
 region_enabled = true
-region_rect = Rect2( 2984, 10, 39, 60 )
+region_rect = Rect2( 7246, 10, 73, 53 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sprite")
@@ -1011,7 +1024,7 @@ parameters/Move/blend_position = Vector2( 0.773684, 0.75 )
 [node name="AttackArea" parent="." instance=ExtResource( 1 )]
 rotation = 1.5708
 
-[node name="Area2D" parent="AttackArea" index="0"]
+[node name="Area2D" parent="AttackArea" index="1"]
 position = Vector2( 37.7029, 2.62997 )
 
 [node name="AttackCollision" parent="AttackArea/Area2D" index="0"]
