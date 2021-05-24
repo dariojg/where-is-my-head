@@ -990,7 +990,7 @@ disabled = true
 position = Vector2( 0, 1 )
 texture = ExtResource( 4 )
 region_enabled = true
-region_rect = Rect2( 7246, 10, 73, 53 )
+region_rect = Rect2( 2984, 10, 39, 60 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sprite")

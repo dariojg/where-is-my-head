@@ -10,4 +10,6 @@ func _on_Area2D_body_entered(body):
 		body.get_hurted(damage)
 		body.knockback = knockback_vector * 150
 		HitAnimationPlayer.stop()
-		HitAnimationPlayer.play("hit")
+		var anims = ["hit","hit2"]
+		anims.shuffle()
+		HitAnimationPlayer.play(anims.pop_front())

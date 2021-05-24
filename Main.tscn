@@ -1,11 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Characters/Enemies/ChineseCR.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Characters/Mains/Persian.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Characters/Enemies/Giant.tscn" type="PackedScene" id=3]
+[ext_resource path="res://powers/PhoenixSummon.tscn" type="PackedScene" id=4]
 
 [node name="Main" type="Node2D"]
-position = Vector2( 0, 1 )
 
 [node name="ChineseCR" parent="." instance=ExtResource( 1 )]
 position = Vector2( 532.627, 450.668 )
@@ -21,3 +21,5 @@ position = Vector2( 545.384, 152.827 )
 
 [node name="Persian" parent="." instance=ExtResource( 2 )]
 position = Vector2( 63.496, 52.3842 )
+
+[node name="PhoenixSummon" parent="." instance=ExtResource( 4 )]

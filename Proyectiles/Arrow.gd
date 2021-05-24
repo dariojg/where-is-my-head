@@ -31,6 +31,8 @@ func _on_Arrow_body_entered(body):
 		body.get_hurted(damage)
 		body.knockback = knockback_direction * knockback_power
 		HitAnimationPlayer.stop()
-		HitAnimationPlayer.play("hit")
+		var anims = ["hit","hit2"]
+		anims.shuffle()
+		HitAnimationPlayer.play(anims.pop_front())
 	else:
 		queue_free()
