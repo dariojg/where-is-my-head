@@ -131,8 +131,10 @@ scale_curve = SubResource( 7 )
 color_ramp = SubResource( 5 )
 
 [node name="Fireball" type="Sprite"]
+modulate = Color( 1, 1, 1, 0.470588 )
 rotation = -1.5708
-z_index = -1
+z_index = 2
+z_as_relative = false
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 448, 8, 132, 92 )

@@ -119,7 +119,9 @@ tracks/1/keys = {
 }
 
 [node name="Phoenix" type="Node2D"]
-z_index = 1
+modulate = Color( 1, 1, 1, 0.470588 )
+z_index = 2
+z_as_relative = false
 script = ExtResource( 2 )
 fireballScene = ExtResource( 3 )
 
@@ -137,5 +139,5 @@ anims/up-left = SubResource( 3 )
 anims/up-right = SubResource( 4 )
 
 [node name="FireballSpawnTimer" type="Timer" parent="."]
-wait_time = 0.3
+wait_time = 0.4
 [connection signal="timeout" from="FireballSpawnTimer" to="." method="_on_FireballSpawnTimer_timeout"]

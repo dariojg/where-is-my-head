@@ -3,6 +3,8 @@ extends Node2D
 var direction_vector = Vector2.ZERO
 export var speed = 150
 
+var ttl = 6
+
 export (PackedScene) var fireballScene
 
 onready var fireballSpawnTimer = $FireballSpawnTimer
@@ -22,6 +24,9 @@ func launch(direction):
 	
 func _physics_process(delta):
 	position += direction_vector * speed * delta
+	ttl -= delta
+	if ttl <= 0:
+		queue_free()
 
 func summon_fireball():
 	var fireball = fireballScene.instance()
