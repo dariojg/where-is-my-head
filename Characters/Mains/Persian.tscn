@@ -783,7 +783,7 @@ graph_offset = Vector2( -45.206, 49.2409 )
 [node name="Persian" type="KinematicBody2D" groups=[
 "hurtable",
 ]]
-collision_mask = 6
+collision_mask = 7
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -792,7 +792,7 @@ shape = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 3 )
 region_enabled = true
-region_rect = Rect2( 4495, 5, 54, 45 )
+region_rect = Rect2( 5, 5, 39, 56 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sprite")
@@ -821,9 +821,11 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/playback = SubResource( 55 )
 parameters/Attack/blend_position = Vector2( 0.7, 0.689655 )
 parameters/Idle/blend_position = Vector2( -0.588811, 0.278351 )
-parameters/Move/blend_position = Vector2( 0.773684, 0.75 )
+parameters/Move/blend_position = Vector2( -0.00581396, 0.982759 )
 
 [node name="ArrowSpawn" type="Position2D" parent="."]
 __meta__ = {
 "_gizmo_extents_": 16.0
 }
+
+[node name="Camera2D" type="Camera2D" parent="."]

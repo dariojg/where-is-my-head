@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Characters/Enemies/ChineseCR.gd" type="Script" id=1]
 [ext_resource path="res://assets/enemies/chinese_spritesheet.png" type="Texture" id=2]
-[ext_resource path="res://Characters/Enemies/PlayerDetectionZone.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Characters/CharacterDetectionZone.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Characters/AttackArea.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Characters/Enemies/WanderController.tscn" type="PackedScene" id=6]
 
@@ -971,7 +971,7 @@ graph_offset = Vector2( 6.52924, 49.2409 )
 [sub_resource type="CapsuleShape2D" id=56]
 
 [sub_resource type="CircleShape2D" id=57]
-radius = 149.696
+radius = 180.0
 
 [node name="ChineseCR" type="KinematicBody2D" groups=[
 "hurtable",
@@ -986,7 +986,7 @@ shape = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 region_enabled = true
-region_rect = Rect2( 5133, 10, 56, 47 )
+region_rect = Rect2( 1408, 10, 28, 65 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sprite")
@@ -1027,9 +1027,9 @@ collision_mask = 3
 [node name="AttackCollision" parent="AttackArea/Area2D" index="0"]
 shape = SubResource( 56 )
 
-[node name="PlayerDetectionZone" parent="." instance=ExtResource( 4 )]
+[node name="CharacterDetectionZone" parent="." instance=ExtResource( 4 )]
 
-[node name="CollisionShape2D" parent="PlayerDetectionZone" index="0"]
+[node name="CollisionShape2D" parent="CharacterDetectionZone" index="0"]
 shape = SubResource( 57 )
 
 [node name="AttackRange" type="RayCast2D" parent="."]
@@ -1041,4 +1041,4 @@ wander_range = 50
 
 [editable path="AttackArea"]
 
-[editable path="PlayerDetectionZone"]
+[editable path="CharacterDetectionZone"]

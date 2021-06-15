@@ -10,9 +10,10 @@ var ArrowScene = preload("res://Proyectiles/Arrow.tscn")
 
 func _ready():
 	animationTree.active = true
+	mode = Modes.FOLLOW
 
-func set_animation_state(state):
-	animationTreeSwitcher.switch_animation(state, movement_vector)
+func set_animation_state(new_state):
+	animationTreeSwitcher.switch_animation(new_state, movement_vector)
 
 func attack_animation_finished():
 	shoot_arrow() #actually shoot arrow on animation finish

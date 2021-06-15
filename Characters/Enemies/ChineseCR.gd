@@ -7,7 +7,7 @@ var damage = 10
 
 onready var animationTree = $AnimationTree
 onready var attackRange = $AttackRange
-onready var playerDetectionZone = $PlayerDetectionZone
+onready var characterDetectionZone = $CharacterDetectionZone
 onready var wanderController = $WanderController
 onready var animationTreeSwitcher = AnimationTreeSwitcher.new(animationTree)
 
@@ -43,9 +43,9 @@ func _physics_process(delta):
 			move_and_slide(velocity * speed)
 
 		Global.States.CHASE:
-			var player = playerDetectionZone.player
-			if player != null:
-				velocity = global_position.direction_to(player.global_position)
+			var character = characterDetectionZone.get_nearest_character(global_position)
+			if character != null:
+				velocity = global_position.direction_to(character.global_position)
 				if attackRange.is_colliding():
 					state = Global.States.ATTACK
 				else:
@@ -64,12 +64,12 @@ func get_hurted(damage_received):
 	if life <= 0:
 		state = Global.States.DEAD
 
-func seek_player():
-	if playerDetectionZone.can_see_player():
+func seek_character():
+	if characterDetectionZone.can_see_character():
 		state = Global.States.CHASE
 
 func seek_and_wander():
-	seek_player()
+	seek_character()
 	if wanderController.timer_time_left() == 0:
 		pick_random_state_and_reset_wander()
 
