@@ -8,7 +8,7 @@ export var duration = 10 #segs
 var time_left = 0
 var wait_fireball_spawn = 3
 
-export var cooldown_total = 5 #segs
+export var cooldown_total = 120 #segs
 var cooldown = 0
 
 func _get_camera_center():
@@ -36,8 +36,8 @@ func _physics_process(delta):
 
 func summon_phoenix():
 	var phoenix = phoenixScene.instance()
-	var viewport = get_viewport() #delete
-	var visiblerect = get_viewport().get_visible_rect() #delete
+	#var viewport = get_viewport() #delete
+	#var visiblerect = get_viewport().get_visible_rect() #delete
 	var camera_center = _get_camera_center()
 	var visible_size = get_viewport().get_visible_rect().size
 	var xLeft = camera_center.x - visible_size.x/2

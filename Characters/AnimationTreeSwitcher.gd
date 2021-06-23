@@ -12,13 +12,13 @@ func _init(a_animationTree):
 func switch_animation(state, vector):
 	match state:
 		Global.States.MOVE, Global.States.WANDER, Global.States.CHASE:
-			animationTree.set("parameters/Idle/blend_position", vector)
 			animationTree.set("parameters/Move/blend_position", vector)
-			animationTree.set("parameters/Attack/blend_position", vector)
 			animationState.travel("Move")
 		Global.States.IDLE:
+			animationTree.set("parameters/Idle/blend_position", vector)
 			animationState.travel("Idle")
 		Global.States.ATTACK:
+			animationTree.set("parameters/Attack/blend_position", vector)
 			animationState.travel("Attack")
 		Global.States.DEAD:
-			animationState.travel("Dead")			
+			animationState.travel("Dead")

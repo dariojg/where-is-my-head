@@ -5,7 +5,7 @@ onready var target_position = global_position
 
 onready var timer = $Timer
 
-export var wander_range = 20
+export var wander_range = 300
 
 func _ready():
 	update_target_position()
