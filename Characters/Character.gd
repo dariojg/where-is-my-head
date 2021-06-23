@@ -24,26 +24,19 @@ enum Modes {
 
 var mode = Modes.MANUAL
 
-func _physics_process(delta):
-	set_animation_state(state)
-	
+func _physics_process(delta):	
 	match mode:
 		Modes.MANUAL:
-			match state:
-				Global.States.MOVE, Global.States.IDLE:
+			
+			if state == Global.States.MOVE or state == Global.States.IDLE:
 					movement_vector = get_manual_movement_vector()
 					move_and_slide(movement_vector * speed)
+					
+			if state != Global.States.ATTACK && Input.is_action_just_pressed("ui_attack"):	
+				state = Global.States.ATTACK
 
 		Modes.FOLLOW:
-			var companion_position = companion.global_position
-			movement_vector = global_position.direction_to(companion_position)
-			if global_position.distance_to(companion_position) > 150:
-				move_and_slide(movement_vector * speed) #*0.8? el compañero se mueve mas lento?
-			else:
-				movement_vector = Vector2.ZERO
-
-		Modes.PROTECT:
-			pass
+			follow_companion()
 			
 	if Input.is_action_just_pressed("switch_character"):
 		if mode in [Modes.FOLLOW, Modes.PROTECT]:
@@ -53,26 +46,18 @@ func _physics_process(delta):
 			mode = Modes.FOLLOW
 			self.Camera.current = false
 
-	set_state()
-
 	if mode != Modes.MANUAL && Input.is_action_just_pressed("switch_companion_mode"):
 		mode = Modes.FOLLOW if mode == Modes.PROTECT else Modes.PROTECT
 
 
 func set_state():	
-	if state != Global.States.ATTACK && state != Global.States.DEAD: #quizas esto no vaya aca
+	if state != Global.States.ATTACK && state != Global.States.DEAD && state != Global.States.CHASE:
 		if movement_vector != Vector2.ZERO:
-			direction_vector = movement_vector
+			direction_vector = movement_vector.normalized()
 			state = Global.States.MOVE
 		else:
 			state = Global.States.IDLE
 
-	if mode == Modes.MANUAL && state != Global.States.ATTACK && Input.is_action_just_pressed("ui_attack"):	
-		state = Global.States.ATTACK
-
-func set_animation_state(new_state):
-	pass
-	
 func get_hurted(damage_received):
 	life -= damage_received
 	if life <= 0:
@@ -88,3 +73,11 @@ func get_manual_movement_vector():
 	movement_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 
 	return movement_vector.normalized()
+
+func follow_companion():
+	var companion_position = companion.global_position
+	movement_vector = global_position.direction_to(companion_position)
+	if global_position.distance_to(companion_position) > 150:
+		move_and_slide(movement_vector * speed) #*0.8? el compañero se mueve mas lento?
+	else:
+		movement_vector = Vector2.ZERO
